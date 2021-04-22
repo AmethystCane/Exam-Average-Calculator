@@ -1,2 +1,2 @@
 # Exam-Average-Calculator
-Calculates your average for the year because exams are only a month away!
+Praying we all get the marks we deserve at the end of a hectic year 🙏
