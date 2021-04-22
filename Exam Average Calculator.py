@@ -12,4 +12,4 @@ for exam in range(number_of_exams):
     score = int(input("Enter exam score: "))
     exam_credits = int(input("Enter how many credits this exam covered: "))
     average = average + score*exam_credits/total_credits
-print("Your average is ", average)
+print("Your average is", average)
