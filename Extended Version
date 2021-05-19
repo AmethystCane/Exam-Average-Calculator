@@ -1,0 +1,33 @@
+# Weighted exam and individual course score average
+
+# Entering the number of years that count towards the final grade
+number_of_years = int(input("Enter the number of years that count towards your final grade: "))
+
+# If they want to enter the final grade, calculate the percentage in total
+final_grade = 0
+assign_exam_score = 0
+average = 0
+
+for graduating_score in range(number_of_years):
+    year_name = str(input("Enter the year (eg. year 2 or 3): "))
+    option = str(input("Select whether you would like to enter your 'final grade' or 'calculate' it separately: "))\
+        .lower()
+    if option == "final grade":
+        input_final_grade = int(input("Enter your final grade for " + year_name + ": "))
+        final_grade_weight = int(input("Enter the weight for " + year_name + ": "))
+        final_grade = final_grade + final_grade_weight * input_final_grade / 100  # final grade for year 2
+        print("This is your final grade: {} %".format(final_grade))
+    elif option == "calculate":
+        total_credits = int(input("Enter the number of credits this year covered: "))
+        number_of_courses = int(input("Enter the number of course you took that year: "))
+        for calculate in range(number_of_courses):
+            course_percentage = int(input("Enter the percentage this course is worth: "))
+            assign_exam = int(input("How many assignments and/or exams did you do for this course: "))
+            for overall_percentage in range(assign_exam):
+                score = int(input("Enter the score: "))
+                score_percentage = int(input("Enter the percentage it was worth: "))
+                assign_exam_score = assign_exam_score + score * score_percentage / 100
+            print("This is what you got for this course:", assign_exam_score, "%")
+            assign_exam_score = 0  # reset the score to 0
+    else:
+        print("Failure. Try again")
